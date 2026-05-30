@@ -1,7 +1,8 @@
 import './App.css';
-import Hero from './components/Hero';
-import TableSection from "./TableSection/TableSection";
-import Footer from './Footer/Footer';
+import Hero from './components/Hero/Hero';
+import TableSection from "./components/TableSection/TableSection";
+import PlanetCard from "./components/PlanetCard/PlanetCard";
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
 
       <Hero />
       <TableSection />
+      <PlanetCard />
       <Footer />
     </>
   );
