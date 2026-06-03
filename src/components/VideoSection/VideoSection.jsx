@@ -6,12 +6,11 @@ export default function VideoSection() {
     <section className="video-section">
        <div className="video-container">
         <figure>
-            <video controls autoPlay loop muted>
+          <video controls autoPlay loop muted>
             <source src="/Planet.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>                                 
-        </figure>
-         
+        </figure> 
        </div>
        <div className="video-content">
             <h2 >How Planetary Data Helps Us<br />Understand Space</h2>
