@@ -91,7 +91,7 @@
 .span-2 {
   grid-column: span 2;
   display: flex;
-  /* justify-content:; */
+  /* justify-content: ; */
   margin-top: 8px;
 }
 
