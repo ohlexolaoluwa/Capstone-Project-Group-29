@@ -1,10 +1,7 @@
-
-import React from "react";
-import "./Hero.css";
+// import "./Hero.css";
 
 export default function Hero() {
   return (
-  
     <section className="hero">
       <div className="hero-text">
         <h1>Explore Our Solar System Through Data</h1>
@@ -20,7 +17,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-image">
-        <img src="/earth.png" alt="Earth Image" />
+        <img src="/earth.png" alt="Earth"/>
       </div>
     </section>
   );

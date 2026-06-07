@@ -17,7 +17,7 @@ function FormSection() {
 
   // 2. Keep track of remaining characters for your 100-character max limit
   const maxChars = 100;
-  const charsRemaining = maxChars - formData.message.length;
+  const charsRemaining = Math.max(0, maxChars - formData.message.length);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -76,76 +76,80 @@ try {
         <div className="success-message">
           <h3>Form Submitted Successfully!</h3>
           <p>Thank you for reaching out. Your planetary science inquiry has been logged.</p>
-          <button className="submit-btn" onClick={() => setIsSubmitted(false)}>
+          <button className="submit-btn" onClick={() => { setIsSubmitted(false); setErrorMessage(''); }}>
             Send Another Message
           </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="form-grid">
-          {errorMessage && <div className="error-banner">{errorMessage}</div>}
-<div className="form-group">
-  <label htmlFor="fullName">Full Name<span className="req">*</span></label>
-  <input 
-    type="text" 
-    id="fullName"
-    name="fullName"
-    placeholder="Full name" 
-    value={formData.fullName}
-    onChange={handleChange}
-    required 
-  />
-</div>
+          {errorMessage && <div className="error-banner" role="alert">{errorMessage}</div>}
 
-<div className="form-group">
-  <label htmlFor="email">Email<span className="req">*</span></label>
-  <input 
-    type="email" 
-    id="email"
-    name="email"
-    placeholder="Please enter a valid email address." 
-    value={formData.email}
-    onChange={handleChange}
-    required 
-  />
-</div>
+          <div className="form-group">
+            <label htmlfor="fullname" >Full Name<span className="req">*</span></label>
+            <input
+              id="fullname"
+              type="text" 
+              name="fullName"
+              placeholder="Full name" 
+              value={formData.fullName}
+              onChange={handleChange}
+              required 
+            />
+          </div>
 
-<div className="form-group">
-  <label htmlFor="phone">Phone Number<span className="req">*</span></label>
-  <input 
-    type="tel" 
-    id="phone"
-    name="phone"
-    placeholder="Please enter a valid phone number." 
-    value={formData.phone}
-    onChange={handleChange}
-    required 
-  />
-</div>
+          <div className="form-group">
+            <label htmlFor="email">Email<span className="req">*</span></label>
+            <input 
+              id="email"
+              type="email" 
+              name="email"
+              placeholder="example@example.com" 
+              value={formData.email}
+              onChange={handleChange}
+              required 
+            />
+          </div>
 
-<div className="form-group">
-  <label htmlFor="message">Message<span className="req">*</span></label>
-  <textarea 
-    id="message"
-    name="message"
-    placeholder="Enter your message" 
-    maxLength={maxChars}
-    value={formData.message}
-    onChange={handleChange}
-    rows="4"
-    required 
-  />
-  <span className="char-count">{charsRemaining} characters</span>
-</div>
+          <div className="form-group">
+            <label htmlfor="phone" >Phone Number<span className="req">*</span></label>
+            <input 
+              id="phone"
+              type="tel" 
+              pattern="[0-9+\-\s()]{7,15}"
+              name="phone"
+              placeholder="Please enter a valid phone number." 
+              value={formData.phone}
+              onChange={handleChange}
+              required 
+            />
+          </div>
 
-<div className="span-2">
-  <button type="submit" className="submit-btn" disabled={isSubmitting}>
-    {isSubmitting ? "Submitting..." : "Submit"}
-  </button>
-</div>
-</form>
+          <div className="form-group">
+            <label htmlfor="message" >Message<span className="req">*</span></label>
+            <textarea 
+              id="message"
+              type="text"
+              name="message"
+              placeholder="Enter your message" 
+              maxLength={maxChars}
+              rows="4"
+              value={formData.message}
+              onChange={handleChange}
+              required 
+            />
+            <span className="char-count">{charsRemaining} characters</span>
+          </div>
+
+          <div className="span-2">
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </button>
+          </div>
+        </form>
       )}
     </section>
   );
 }
 
 export default FormSection;
+
