@@ -1,10 +1,16 @@
+/* ==========================================================================
+   DESKTOP GLOBAL LAYOUT (Base Styles)
+   ========================================================================== */
 .site-footer {
   background: #030f33; 
   color: #ffffff;
   padding: 60px 40px 40px 40px;
-  display: flex;
+  display: flex; 
+  flex-direction: row;
   justify-content: center;
   font-family: 'Inter', sans-serif;
+  width: 100%;                  /* Forces background from left to right edges */
+  box-sizing: border-box;
 }
 
 .footer-container {
@@ -16,6 +22,23 @@
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 16px;
+}
+
+/* 🎯 BASE HORIZONTAL RULES */
+.footer-team-list ul {
+  display: flex !important;
+  flex-direction: row !important; 
+  flex-wrap: wrap !important;     
+  list-style: none !important;    
+  padding: 0 !important;
+  margin: 0 !important;
+  gap: 20px !important;           /* Clean separation gap space */
+}
+
+.footer-team-list ul li {
+  font-size: 15px;
+  color: #cbd5e1;
+  font-weight: 500;
 }
 
 .footer-top p {
@@ -41,9 +64,14 @@
 
 .footer-logo {
   font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* Tablet view */
+
+/* ==========================================================================
+   TABLET RESPONSIVE OVERRIDES (max-width: 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
   .site-footer {
     padding: 50px 25px 30px 25px;
@@ -51,6 +79,17 @@
 
   .footer-top h3 {
     font-size: 16px;
+  }
+
+  /* 🎯 FIX: Explicitly forces horizontal list direction on tablet screens */
+  .footer-team-list ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start;
+    gap: 16px !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .footer-top p {
@@ -66,7 +105,9 @@
 }
 
 
-/* Mobile view */
+/* ==========================================================================
+   MOBILE PHONE RESPONSIVE OVERRIDES (max-width: 480px)
+   ========================================================================== */
 @media (max-width: 480px) {
   .site-footer {
     padding: 40px 20px 25px 20px;
@@ -78,6 +119,17 @@
 
   .footer-top h3 {
     font-size: 15px;
+  }
+
+  /* 🎯 FIX: Explicitly forces horizontal alignment on compact phone screens */
+  .footer-team-list ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center;     /* Centers names beautifully on small displays */
+    gap: 12px !important;          /* Closer text gap parameters for mobile bounds */
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .footer-top p {

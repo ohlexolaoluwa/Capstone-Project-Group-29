@@ -5,20 +5,24 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-container">
-        <div className="footer-top">
-          <h3>About</h3>
-          <p>
-            <ul>
-             <li>Ayomipo</li>
-             <li>Godscovenant</li>
-             <li>Chidiebere</li>
-             <li>John</li>
-             <li>Toyosi</li>
-             <li>Oluwatosin</li>
-             <li>Charles</li>
-            </ul>
-         </p>
-        </div>
+<div className="footer-top">
+  <h3>About</h3>
+  
+  <div className="footer-team-list">
+    <ul>
+      <li>Ayomipo</li>
+      <li>Godscovenant</li>
+      <li>Chidiebere</li>
+      <li>John</li>
+      <li>Toyosi</li>
+      <li>Oluwatosin</li>
+      <li>Charles</li>
+      <li>Olaoluwa</li>
+      <li>Tolu</li>
+      <li>Julius</li>
+    </ul>
+  </div>
+</div>
         
         <hr className="footer-divider" />
         
