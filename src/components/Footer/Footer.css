@@ -2,20 +2,25 @@
    DESKTOP GLOBAL LAYOUT (Base Styles)
    ========================================================================== */
 .site-footer {
-  background: #030f33; 
+  background: #030f33;
   color: #ffffff;
   padding: 60px 40px 40px 40px;
+<<<<<<< HEAD
   display: flex; 
   flex-direction: row;
   justify-content: center;
   font-family: 'Inter', sans-serif;
   width: 100%;                  /* Forces background from left to right edges */
+=======
+  width: 100%;
+>>>>>>> upstream/main
   box-sizing: border-box;
 }
 
 .footer-container {
   max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .footer-top h3 {
@@ -45,7 +50,24 @@
   font-size: 15px;
   color: #cbd5e1;
 }
-
+.footer-top ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+.footer-top ul li {
+  width: calc(25% - 12px);
+}
+.footer-top ul li::after {
+  content: ".";
+  color: #cbd5e1;
+  margin-left: 4px;
+}
+.footer-top ul li:last-child::after {
+  content: "";
+}
 .footer-divider {
   border: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -64,8 +86,15 @@
 
 .footer-logo {
   font-weight: 700;
+<<<<<<< HEAD
   color: #ffffff;
   text-decoration: none;
+=======
+  font-size: 1.8em;
+}
+.footer-bottom a:hover {
+  color: purple;
+>>>>>>> upstream/main
 }
 
 
@@ -104,10 +133,14 @@
   }
 }
 
+<<<<<<< HEAD
 
 /* ==========================================================================
    MOBILE PHONE RESPONSIVE OVERRIDES (max-width: 480px)
    ========================================================================== */
+=======
+/* Mobile view */
+>>>>>>> upstream/main
 @media (max-width: 480px) {
   .site-footer {
     padding: 40px 20px 25px 20px;
@@ -149,6 +182,7 @@
   }
 
   .footer-logo {
+    color: #ffffff;
     font-size: 14px;
   }
 }

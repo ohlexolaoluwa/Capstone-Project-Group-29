@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import React from 'react';
 import './Hero.css';
 
 function Hero() {
+=======
+// import "./Hero.css";
+
+export default function Hero() {
+>>>>>>> upstream/main
   return (
     <section className="hero">
       
@@ -17,11 +23,19 @@ function Hero() {
       </div>
 
       <div className="hero-image">
+<<<<<<< HEAD
         <img className="hero-planet-img" src="src/assets/Image(1).png" alt="Earth from space" />
+=======
+        <img src="/earth.png" alt="Earth"/>
+>>>>>>> upstream/main
       </div>
     
     </section>
   );
+<<<<<<< HEAD
 }
 
 export default Hero;
+=======
+}
+>>>>>>> upstream/main
